@@ -1,4 +1,7 @@
-package PACKAGE_NAME;
+public interface StackObserver {
+    void update(String stockSymbol,double stockPrice);
+}
 
-public class Investor {
+public class Investor implements  StackObserver{
+    private String name;
 }

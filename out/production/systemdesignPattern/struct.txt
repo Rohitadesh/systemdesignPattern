@@ -1,0 +1,2 @@
+Structural Patterns focus on how classes and objects are composed to form larger structures, while keeping them flexible and efficient.
+
