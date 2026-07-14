@@ -1,0 +1,41 @@
+from abc import ABC
+class Command(ABC):
+
+    def __init__(self,receiver):
+        self.receiver=receiver
+    
+    @abstractmethod
+    def  process(self):
+        pass
+
+
+
+class ConcreteCommand(Command):
+    def __init__(self, receiver):
+        self.receiver=receiver
+    
+    def process(self):
+        self.receiver.perform_action()
+
+
+class Receiver:
+    def perform_action(self):
+        print('Action performed in receiver')
+
+class Invoker:
+    def __init__(self):
+        self.cmd=None
+    def command(self,cmd):
+        self.cmd=cmd
+    
+    def execute(self):
+        self.cmd.process()
+
+
+if __name__=="__main__":
+    receiver=Receiver()
+    cmd=ConcreteCommand(receiver)
+    invoker=Invoker()
+    invoker.command(cmd)
+    # invoker.command(cm/)
+    invoker.execute()
